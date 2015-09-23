@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# create partition XXX, need cleaner alternative
 fdisk /dev/xvdb <<EOF
 n
 p
@@ -9,7 +11,7 @@ p
 w
 EOF
 
-## from here everything should work
+## format as ext4 
 
 mkfs.ext4 /dev/xvdb1
 mount /dev/xvdb1 /mnt/
